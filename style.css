@@ -1,0 +1,79 @@
+.gradient-background {
+    background: linear-gradient(300deg, #e76f51, #e9c46a, #e76f51, #e9c46a);
+    background-size: 200% 200%;
+    animation: gradient-animation 2s ease infinite;
+}
+  #title {
+    background-color: #05536c;
+    color: white;
+    padding: 50px 0;
+    text-align: center;
+}
+
+#title h1 {
+    font-size: 4em;
+    font-family: 'Bungee Shade', cursive;
+}
+
+#title p {
+    font-size: 1.5em;
+}
+  #images {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 10px;
+    background-color: #f0f0f0;
+    font-family: 'Montserrat', sans-serif;
+}
+.image-container {
+    margin: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 5px;
+    width: 700px;
+}
+.image-container img {
+    width: 100%;
+    height: auto;
+}
+.header {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 20px;
+}
+.header h1 {
+    font-size: 2.5em;
+    font-weight: 700;
+}
+.header p {
+    font-size: 1.2em;
+    font-weight: 400;
+}
+
+#seniors {
+    background-color: #e76f51;
+    color: black;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 20px 0;
+    font-family: 'Montserrat', sans-serif;
+}
+
+#seniors h2 {
+    text-align: center;
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+#seniors ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+#seniors ul li {
+    margin: 10px;
+    font-size: 1.2em;
+}
