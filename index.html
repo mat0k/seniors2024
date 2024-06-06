@@ -35,36 +35,34 @@
             </div>
         </div>
     </section>
-
     <div id="images">
         <div class="image-container">
-            <img src="image (1).JPG" alt="Memory 1">
+            <img data-src="image (1).JPG" alt="Memory 1">
         </div>
         <div class="image-container">
-            <img src="image (2).JPG" alt="Memory 1">
+            <img data-src="image (2).JPG" alt="Memory 1">
         </div>
         <div class="image-container">
-            <img src="image (1).png" alt="Memory 1">
+            <img data-src="image (1).png" alt="Memory 1">
         </div>
         <div class="image-container">
-            <img src="image (2).png" alt="Memory 1">
+            <img data-src="image (2).png" alt="Memory 1">
         </div>
         <div class="image-container">
-            <img src="image (3).png" alt="Memory 1">
+            <img data-src="image (3).png" alt="Memory 1">
         </div>
         <div class="image-container">
-            <img src="image (3).JPG" alt="Memory 1">
+            <img data-src="image (3).JPG" alt="Memory 1">
         </div>
         <div class="image-container">
-            <img src="image (4).JPG" alt="Memory 1">
+            <img data-src="image (4).JPG" alt="Memory 1">
         </div>
         <div class="image-container">
-            <img src="image (5).JPG" alt="Memory 1">
+            <img data-src="image (5).JPG" alt="Memory 1">
         </div>
         <div class="image-container">
-            <img src="image (4).PNG" alt="Memory 1">
+            <img data-src="image (4).PNG" alt="Memory 1">
         </div>
-      
     </div>
     <div id="seniors">
         <h2>Seniors 2023-2024</h2>
@@ -85,6 +83,33 @@
             <li>Hassan Maatouk</li>
         </ul>
     </div>
-</body>
-
-</html>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var lazyImages = [].slice.call(document.querySelectorAll("img[data-src]"));
+    
+            if ("IntersectionObserver" in window) {
+                let lazyImageObserver = new IntersectionObserver(function(entries, observer) {
+                    entries.forEach(function(entry) {
+                        if (entry.isIntersecting) {
+                            let lazyImage = entry.target;
+                            lazyImage.src = lazyImage.dataset.src;
+                            lazyImage.removeAttribute("data-src");
+                            lazyImageObserver.unobserve(lazyImage);
+                        }
+                    });
+                });
+    
+                lazyImages.forEach(function(lazyImage) {
+                    lazyImageObserver.observe(lazyImage);
+                });
+            } else {
+                // Fallback for browsers that don't support IntersectionObserver
+                lazyImages.forEach(function(lazyImage) {
+                    lazyImage.src = lazyImage.dataset.src;
+                    lazyImage.removeAttribute("data-src");
+                });
+            }
+        });
+    </script>
+    </body>
+    </html>
