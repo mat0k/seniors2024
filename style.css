@@ -1,8 +1,24 @@
 .gradient-background {
-    background: linear-gradient(300deg, #e76f51, #e9c46a, #e76f51, #e9c46a);
-    background-size: 200% 200%;
-    animation: gradient-animation 2s ease infinite;
-}
+    background: linear-gradient(300deg, #3dac1b, #03887d , #1f7f9f, #05536c);
+    background-size: 180% 180%;
+    animation: gradient-animation 5s ease infinite;
+  }
+  @keyframes gradient-animation {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+  
+
+
+
+
   #title {
     background-color: #05536c;
     color: white;
@@ -52,8 +68,8 @@
 }
 
 #seniors {
-    background-color: #e76f51;
-    color: black;
+    background-color: #05536c;
+    color: white;
     padding: 20px;
     border-radius: 10px;
     margin: 20px 0;
